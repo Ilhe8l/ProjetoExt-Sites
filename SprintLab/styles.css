@@ -12,6 +12,8 @@
     --transition: all 0.3s ease;
 }
 
+/* Estilos Gerais */
+
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +25,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 .container {
@@ -31,6 +34,8 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* Estilos do Cabeçalho */
 
 header {
     background-color: var(--white);
@@ -90,6 +95,8 @@ nav {
     transition: var(--transition);
 }
 
+/* Estilos do Conteúdo Principal */
+
 main {
     padding-top: 70px;
 }
@@ -101,6 +108,8 @@ section {
 h1, h2, h3 {
     margin-bottom: 1rem;
 }
+
+/* Estilos da Seção Hero */
 
 .hero {
     background: linear-gradient(-45deg,  #ff88aa,  #2d135f, #924ff1);
@@ -155,6 +164,8 @@ h1, h2, h3 {
     100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
 
+/* Estilos dos Botões CTA */
+
 .cta-buttons {
     display: flex;
     gap: 1rem;
@@ -191,6 +202,8 @@ h1, h2, h3 {
     color: var(--primary-color);
 }
 
+/* Estilos do Conteúdo */
+
 .content {
     display: flex;
     justify-content: center;
@@ -219,10 +232,11 @@ h1, h2, h3 {
     margin-bottom: 1.5rem;
 }
 
-#about, #theory{
+/* Estilos das Seções Específicas */
+
+#about, #theory, #team, #process{
     padding-bottom: 0;
 }
-
 
 .theory-section, .definition-section {
     background: var(--primary-dark);
@@ -235,6 +249,8 @@ h1, h2, h3 {
 .artfacts{
     height: 40vh; /*Apagar Depois*/
 }
+
+/*Estilos dos Cards*/
 
 .definition-cards {
     display: flex;
@@ -264,13 +280,17 @@ h1, h2, h3 {
 }
 
 .definition-card:hover {
+    transform: scale(1.2);
     border: 1px solid var(--accent-color);
-    transform: scale(1.05);
+    
 }
 
 .definition-card:active {
     transform: scale(0.95) rotateZ(1.7deg);
 }
+
+
+/* Estilos do Slider */
 
 .slider-container {
     width: 100%;
@@ -329,7 +349,10 @@ h1, h2, h3 {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-/*Linha do Tempo*/
+/*Estilos da Linha do Tempo*/
+#process{
+    z-index: 1; /*garante que o hover não fique 'embaixo' de algo*/
+}
 .timeline {
     display: flex;
     justify-content: space-around;
@@ -338,6 +361,7 @@ h1, h2, h3 {
     max-width: 1000px;
     position: relative;
 }
+
 .timeline::before {
     content: '';
     position: absolute;
@@ -345,7 +369,7 @@ h1, h2, h3 {
     left: 0;
     right: 0;
     height: 2px;
-    background-color: #ffffff;
+    background-color: var(--primary-dark);
     transform: translateY(-50%);
 }
 .timeline-item {
@@ -360,7 +384,6 @@ h1, h2, h3 {
     height: 40px;
     background: var(--primary-dark);
     border-radius: 50%;
-    margin-bottom: 25px;
     transition: transform 0.3s ease-in-out;
     animation: bounce 2s infinite;
     display: flex;
@@ -372,9 +395,11 @@ h1, h2, h3 {
 }
 .timeline-title {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
+    padding-top: 1.5rem;
+    text-align: center;
 }
 .timeline-content {
     position: absolute;
@@ -384,13 +409,19 @@ h1, h2, h3 {
     background-color: var(--primary-color);
     padding: 15px;
     border-radius: 8px;
-    width: 250px;
+    width: 20rem;
     text-align: center;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--white);
 }
+
+.timeline-content p{
+    margin: 0;
+}
+
 .timeline-item:hover .timeline-content {
     opacity: 1;
     visibility: visible;
@@ -412,49 +443,7 @@ h1, h2, h3 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 768px) {
-    .timeline {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 20px;
-    }
-    .timeline::before {
-        top: 0;
-        bottom: 0;
-        left: 20px;
-        width: 2px;
-        height: auto;
-        transform: none;
-    }
-    .timeline-item {
-        flex-direction: row;
-        margin-bottom: 30px;
-        width: 100%;
-    }
-    .timeline-dot {
-        margin-left: 1.5rem;
-        min-width: 3rem;
-        height: 3rem;
-       
-        margin-bottom: 0;
-    }
-    .timeline-title {
-        margin-bottom: 10px;
-    }
-    .timeline-content {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        margin-left: 1rem;
-        width: calc(100% - 80px);
-    }
-    .timeline-item:hover .timeline-content {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(1rem) translateY(-0.3rem) scale(1.05);
-    }
-}
+/*Estilos das Curvas*/
 
 .spacer {
     aspect-ratio: 900/150;
@@ -471,6 +460,33 @@ h1, h2, h3 {
 .layer-top {
     background-image: url('layered-waves-top.svg');
 }
+
+/* Estilos da Seção de Recursos */
+
+.features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    list-style-type: none;
+}
+
+.features-list li {
+    background-color: var(--primary-dark);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--white);
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*Estilos do Rodapé*/
 
 footer {
     background-color: var(--primary-dark);
@@ -495,7 +511,7 @@ footer {
 }
 
 /*Animação Entrada*/
-/* Reveal animations */
+
 .reveal {
     position: relative;
     opacity: 0;
@@ -530,7 +546,8 @@ footer {
     transform: translateX(0);
 }
 
-/* Staggered animation for multiple elements */
+/* Animação escalonada para múltiplos elementos */
+
 .reveal-group .reveal {
     transition-duration: 0.8s;
 }
@@ -543,12 +560,8 @@ footer {
     transition-delay: 0.4s;
 }
 
-
-
-
-
-/*Mobile*/
-@media screen and (max-width: 768px) {
+/*Responsividade*/
+@media (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -610,4 +623,101 @@ footer {
         width: 100%;
         max-width: 300px;
     }
+
+    .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        width: 2px;
+        height: auto;
+        transform: none;
+    }
+    .timeline-item {
+        flex-direction: row;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    .timeline-dot {
+        margin-left: 1.5rem;
+        min-width: 3rem;
+        height: 3rem;
+       
+        margin-bottom: 0;
+    }
+    .timeline-title {
+        margin-bottom: 10px;
+        text-align: left;
+        padding: 0;
+    }
+    .timeline-content {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        margin-left: 1rem;
+        width: calc(100% - 80px);
+    }
+    .timeline-item:hover .timeline-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(1rem) translateY(-0.3rem) scale(1.05);
+    }
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adicione isso ao final do seu arquivo CSS existente */
+
+/* Círculos decorativos */
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.circle-white {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.circle-purple {
+    background-color: var(--primary-color);
+}
+
+/* Posicionamento dos círculos */
+.hero .circle:nth-child(1) {
+    top: 10%;
+    left: -50px;
+}
+
+.hero .circle:nth-child(2) {
+    bottom: 10%;
+    right: -50px;
+}
+
+.about-section .circle {
+    top: -100px;
+    right: -100px;
+}
+
+.theory-section .circle {
+    bottom: -100px;
+    left: -100px;
+}
+
+.definition-section .circle {
+    top: 50%;
+    right: -100px;
+}
+
+.team-section .circle {
+    bottom: -100px;
+    left: -100px;
 }
