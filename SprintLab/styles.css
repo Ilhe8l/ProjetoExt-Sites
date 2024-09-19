@@ -660,7 +660,7 @@ footer {
         opacity: 1;
         visibility: visible;
         margin-left: 1rem;
-        width: calc(100% - 80px);
+        width: calc(100% - 1.3rem);
     }
     .timeline-item:hover .timeline-content {
         opacity: 1;
