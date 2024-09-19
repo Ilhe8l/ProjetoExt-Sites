@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.slide');
     const pagination = document.querySelector('.pagination');
     let currentIndex = 0;
+    let startX = 0;
+    let endX = 0;
 
     // Create pagination dots
     slides.forEach((_, index) => {
@@ -78,7 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSlider();
     }
 
-    
+    // Handle touch events
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', () => {
+        if (startX > endX + 50) {
+            showNextSlide();
+        } else if (startX < endX - 50) {
+            showPrevSlide();
+        }
+    });
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {

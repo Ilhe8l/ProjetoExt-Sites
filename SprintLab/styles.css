@@ -598,7 +598,7 @@ footer {
     }
 
     .hero-image {
-        display: none;
+        width: 60vh;
     }
 
     .cta-buttons {
@@ -721,6 +721,8 @@ footer {
     bottom: -100px;
     left: -100px;
 }
+
+/*Consertou*/
 
 html, body {
     overflow-x: hidden;
