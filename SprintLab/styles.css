@@ -294,8 +294,8 @@ h1, h2, h3 {
 
 .slider-container {
     width: 100%;
-    max-width: 600px;
-    height: 300px;
+    max-width: 700px;
+    height: 23rem;
     overflow: hidden;
     margin: 1.5rem auto;
     position: relative;
@@ -311,7 +311,7 @@ h1, h2, h3 {
     flex: 0 0 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: var(--primary-color);
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow-y: auto;
@@ -319,12 +319,12 @@ h1, h2, h3 {
 
 .slide h3 {
     margin-top: 0;
-    color: #333;
+    color: var(--white);
 }
 
 .slide p {
     line-height: 1.6;
-    color: #666;
+    color: var(--white);
 }
 
 .pagination {
@@ -340,13 +340,13 @@ h1, h2, h3 {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .dot.active {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /*Estilos da Linha do Tempo*/
@@ -487,27 +487,62 @@ h1, h2, h3 {
 }
 
 /*Estilos do Rodapé*/
-
-footer {
+.main-footer {
     background-color: var(--primary-dark);
     color: var(--white);
-    padding: 2rem 0;
-    text-align: center;
+    padding: 3rem 2rem 1rem;
+    width: 100%;
 }
 
-.social-links {
-    margin-top: 1rem;
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
-.social-links a {
+.footer-section {
+    flex: 1 1 200px;
+}
+
+.footer-section h3 {
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    display: flex;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(25px, 1fr));
+    gap: 0.5rem;
+    max-width: 200px;
+}
+
+.footer-section a {
+    color: var(--gray);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
     color: var(--white);
     font-size: 1.5rem;
-    margin: 0 0.5rem;
     transition: var(--transition);
 }
 
-.social-links a:hover {
-    color: var(--accent-color);
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray);
 }
 
 /*Animação Entrada*/
@@ -552,13 +587,18 @@ footer {
     transition-duration: 0.8s;
 }
 
-.reveal-group .reveal:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.reveal-group .reveal:nth-child(3) {
-    transition-delay: 0.4s;
-}
+.reveal-group .reveal:nth-child(1) {transition-delay: 0.2s;}
+.reveal-group .reveal:nth-child(2) {transition-delay: 0.4s;}
+.reveal-group .reveal:nth-child(3) {transition-delay: 0.6s;}
+.reveal-group .reveal:nth-child(4) {transition-delay: 0.8s;}
+.reveal-group .reveal:nth-child(5) {transition-delay: 1s;}
+.reveal-group .reveal:nth-child(6) {transition-delay: 1.2s;}
+.reveal-group .reveal:nth-child(7) {transition-delay: 1.4s;}
+.reveal-group .reveal:nth-child(8) {transition-delay: 1.6s;}
+.reveal-group .reveal:nth-child(9) {transition-delay: 1.8s;}
+.reveal-group .reveal:nth-child(10) {transition-delay: 2s;}
+.reveal-group .reveal:nth-child(11) {transition-delay: 2.2s;}
+.reveal-group .reveal:nth-child(12) {transition-delay: 2.4s;}
 
 /*Responsividade*/
 @media (max-width: 768px) {
@@ -622,6 +662,10 @@ footer {
     .definition-card {
         width: 100%;
         max-width: 300px;
+    }
+
+    .slider-container{
+       height: 60%;
     }
 
     .timeline {
