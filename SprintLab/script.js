@@ -198,3 +198,26 @@ window.onclick = function(event) {
 function abrirNovaPagina(Link) {
     window.open(Link, '_blank');
   }
+
+const gallery = document.querySelector('.gallery');
+let scrollAmount = 0;
+
+function autoScroll() {
+    scrollAmount += 1; // Velocidade de scroll
+    if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
+        scrollAmount = 0; // Volta ao início
+    }
+    gallery.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+gallery.addEventListener('click', () => {
+    clearInterval(autoScrollInterval); // Para o scroll ao clicar na galeria
+});
+
+// Inicia o autoScroll quando a página carregar
+window.onload = () => {
+    autoScrollInterval = setInterval(autoScroll, 15);
+};
