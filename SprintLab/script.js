@@ -219,5 +219,5 @@ gallery.addEventListener('click', () => {
 
 // Inicia o autoScroll quando a página carregar
 window.onload = () => {
-    autoScrollInterval = setInterval(autoScroll, 15);
+    autoScrollInterval = setInterval(autoScroll, 30);
 };
