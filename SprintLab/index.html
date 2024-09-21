@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SprintLab - Guia Definitivo</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0e6a916873.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -33,13 +32,13 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>O Guia do Sprint LAB</h1>
-                <p>O Sprint Lab é um programa de extensão do IFES, Campus Serra, que acelera a validação e prototipação de ideias 
-                    inovadoras. Utilizando metodologias ágeis como Design Sprint, Scrum e Design Thinking, ajudamos a transformar 
-                    ideias em protótipos tangíveis em pouco tempo, promovendo um ambiente colaborativo onde a inovação floresce. 
-                    Conheça o Sprint Lab ou descubra o SmartIdea, uma aplicação desenvolvida usando nosso guia.</p>
+                <p>O Sprint Lab é um programa de extensão do IFES, Campus Serra, que acelera a validação e prototipação de ideias inovadoras. Utilizando 
+                    metodologias ágeis como Design Sprint, Scrum e Design Thinking, ajudamos a transformar ideias em protótipos tangíveis em pouco tempo, 
+                    promovendo um ambiente colaborativo onde a inovação floresce. Conheça o Sprint Lab abaixo ou, se já é familiar, veja nosso modelo de 
+                    relatório ou explore o SmartIdea, criado com nossa metodologia.</p>
                 <div class="cta-buttons">
-                    <button href="#purpose" class="cta primary">Saiba Mais</button>
-                    <button class="cta secondary">Conheça o SmartIdea</button>
+                    <button class="cta primary">Conheça o SmartIdea</button>
+                    <button onclick="abrirNovaPagina('https://docs.google.com/document/d/1_nytJ_RCLkrOAnJAd2qMnNkQ77fbh4lKNR-pt3qM-0o/edit')" class="cta secondary">Modelo de Relatório</button>
                 </div>
             </div>
             <div class="hero-image"></div>
@@ -82,13 +81,45 @@
                         ágeis, o programa enfatiza a colaboração intensa entre a equipe interna do Sprint Lab e o público externo, o que é crucial para o sucesso 
                         das iniciativas.</p>
                     <p>Os componentes principais do Sprint Lab incluem:</p>
-                    <div class="definition-cards reveal-group">
-                        <div class="definition-card reveal fade-bottom">Ideação</div>
-                        <div class="definition-card reveal fade-bottom">Prototipação</div>
-                        <div class="definition-card reveal fade-bottom">Validação</div>
+                    <div class="definition-cards">
+                        <ul class="gallery reveal-group">
+                            <li class="gallery-item reveal fade-bottom" style="background: #D1B3FF;" data-title="Ideia ou Problema" data-description="Cada iteração do Sprint Lab começa com a identificação de uma ideia ou problema a ser abordado e prototipado durante a oficina.">
+                                <i class="fas fa-lightbulb"></i>
+                                <h2>Ideia ou Problema</h2>
+                            </li>
+                            <li class="gallery-item reveal fade-bottom" style="background: #B399FF;" data-title="Protótipo" data-description="O objetivo central de cada execução é criar um protótipo. Isso implica em transformar a ideia em algo tangível e prático.">
+                                <i class="fas fa-cube"></i>
+                                <h2>Protótipo</h2>
+                            </li>
+                            <li class="gallery-item reveal fade-bottom" style="background: #C4A7E5;" data-title="Equipe do Sprint Lab" data-description="A equipe do Sprint Lab desempenha um papel crucial na liderança do processo de transformação da ideia em um protótipo e sua validação. Eles são responsáveis pela condução das atividades da oficina.">
+                                <i class="fas fa-users"></i>
+                                <h2>Equipe do Sprint Lab</h2>
+                            </li>
+                            <li class="gallery-item reveal fade-bottom" style="background: #9668CF;" data-title="Parceiro Externo" data-description="O parceiro externo desempenha um papel essencial, contribuindo com insights e feedbacks. Eles participam explicando a ideia ou problema inicial e fornecendo feedbacks durante a validação e construção do protótipo.">
+                                <i class="fas fa-handshake"></i>
+                                <h2>Parceiro Externo</h2>
+                            </li>
+                            <li class="gallery-item reveal fade-bottom" style="background: #6C3AB8;" data-title="Tipos de Protótipos" data-description="Os protótipos podem ser do tipo 'protótipo de fumaça', buscando criar uma representação funcional mínima para validar a ideia ou problema. Além disso, é possível explorar MVPs (Mínimos Produtos Viáveis) no estilo 'Mágico de Oz' ou 'MVP Duplo' para simular funcionalidades semelhantes a um produto final.">
+                                <i class="fas fa-layer-group"></i>
+                                <h2>Tipos de Protótipos</h2>
+                            </li>
+                            <li class="gallery-item reveal fade-bottom" style="background: #4A1F75;" data-title="Duração da Oficina" data-description="Cada oficina do Sprint Lab tem uma duração máxima de 4 meses, o que indica que o processo de iteração e prototipagem deve ser concluído dentro desse período.">
+                                <i class="fas fa-clock"></i>
+                                <h2>Duração da Oficina</h2>
+                            </li>
+                        </ul>     
+            
                     </div>
                 </div>
             </section>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                </div>
+            </div>
 
             <div class="spacer layer-top"></div>
 
@@ -174,18 +205,14 @@
                     <h2>Recursos</h2>
                     <p>Os artefatos gerados durante o processo do Sprint Lab são essenciais para o sucesso da ideia e para a certificação no programa. Estes artefatos servem como documentação detalhada do processo, permitindo a avaliação e o aprendizado contínuo. A lista de artefatos inclui:</p>
                     <ul class="features-list reveal-group">
-                        <li class="reveal fade-bottom">Metodologias Ágeis Integradas</li>
-                        <li class="reveal fade-bottom">Prototipação Rápida</li>
-                        <li class="reveal fade-bottom">Validação de Ideias</li>
-                        <li class="reveal fade-bottom">Colaboração Multidisciplinar</li>
-                        <li class="reveal fade-bottom">Mentoria Especializada</li>
-                        <li class="reveal fade-bottom">Workshops Práticos</li>
-                        <li class="reveal fade-bottom">Ferramentas de Design Thinking</li>
-                        <li class="reveal fade-bottom">Análise de Viabilidade</li>
-                        <li class="reveal fade-bottom">Testes de Usabilidade</li>
-                        <li class="reveal fade-bottom">Feedback em Tempo Real</li>
-                        <li class="reveal fade-bottom">Iterações Rápidas</li>
-                        <li class="reveal fade-bottom">Networking com Inovadores</li>
+                        <li class="reveal fade-bottom">Entendimento do Problema</li>
+                        <li class="reveal fade-bottom">Validação da Ideia</li>
+                        <li class="reveal fade-bottom">Protótipo</li>
+                        <li class="reveal fade-bottom">Validação do Protótipo</li>
+                        <li class="reveal fade-bottom">Retratos do Idealizador e da Equipe</li>
+                        <li class="reveal fade-bottom">Imagens das Atividades</li>
+                        <li class="reveal fade-bottom">Modelo de Registro de Atividades</li>
+                        <li class="reveal fade-bottom">Documentação das Atividades e Tempo Investido</li>
                     </ul>
                 </div>
             </section>

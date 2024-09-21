@@ -1,42 +1,4 @@
-/*const particlesContainer = document.querySelector('.info');
-
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    const size = Math.random() * 20 + 1;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.backgroundColor = `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.1})`;
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.bottom = '-10px';
-    const duration = Math.random() * 10 + 5;
-    particle.style.animation = `float-up ${duration}s linear forwards`;
-    particlesContainer.appendChild(particle);
-
-    // Remover partícula após a animação
-    particle.addEventListener('animationend', () => {
-        particle.style.opacity = 0;
-        particle.style.transition = 'opacity 1s';
-        setTimeout(() => {
-            particle.remove();
-        }, 1000);
-    });
-}
-
-// Função para criar várias partículas inicialmente
-function createInitialParticles() {
-    for (let i = 0; i < 60; i++) {
-        createParticle();
-    }
-}
-
-createInitialParticles();
-
-// Criar novas partículas continuamente
-setInterval(() => {
-    createParticle();
-}, 500); // Ajuste o intervalo conforme necessário*/
-
+/*Slider*/
 document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.slider');
     const slides = document.querySelectorAll('.slide');
@@ -45,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let startX = 0;
     let endX = 0;
 
-    // Create pagination dots
+    // Paginação dos pontos
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -80,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSlider();
     }
 
-    // Handle touch events
+    // Toques
     slider.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
     });
@@ -104,13 +66,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelector('.nav-links');
     const navLinkItems = document.querySelectorAll('.nav-links a');
 
-    // Mobile menu toggle
+    // Menu Mobile 
     mobileMenuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
         mobileMenuToggle.classList.toggle('active');
     });
 
-    // Smooth scrolling for navigation links
+    // Animação Suave da Navegação de Página
     navLinkItems.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -124,13 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 
-            // Close mobile menu after clicking a link
+            // Fecha o Menu Após Clicar No LInk
             navLinks.classList.remove('active');
             mobileMenuToggle.classList.remove('active');
         });
     });
 
-    // Reveal animations on scroll
+// Revela os Itens com Animação
 const revealElements = document.querySelectorAll('.reveal');
 const revealElementsOnScroll = function() {
     for (let i = 0; i < revealElements.length; i++) {
@@ -147,7 +109,7 @@ const revealElementsOnScroll = function() {
 };
 
     window.addEventListener('scroll', revealElementsOnScroll);
-    revealElementsOnScroll(); // Initial check on page load
+    revealElementsOnScroll();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,3 +130,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+/*Cards*/
+const sliderC = document.querySelector('.gallery');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+sliderC.addEventListener('mousedown', e => {
+    isDown = true;
+    sliderC.classList.add('active');
+    startX = e.pageX - sliderC.offsetLeft;
+    scrollLeft = sliderC.scrollLeft;
+});
+sliderC.addEventListener('mouseleave', _ => {
+    isDown = false;
+    sliderC.classList.remove('active');
+});
+sliderC.addEventListener('mouseup', _ => {
+    isDown = false;
+    sliderC.classList.remove('active');
+});
+sliderC.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - sliderC.offsetLeft;
+    const SCROLL_SPEED = 3;
+    const walk = (x - startX) * SCROLL_SPEED;
+    sliderC.scrollLeft = scrollLeft - walk;
+});
+
+// Funcionalidade do Modal
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDescription = document.getElementById("modal-description");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        modalTitle.textContent = item.dataset.title;
+        modalDescription.textContent = item.dataset.description;
+        modal.style.display = "block";
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+    });
+});
+
+closeBtn.onclick = function() {
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = "none";
+        }, 300);
+    }
+}
+
+/*Abrir Página*/
+function abrirNovaPagina(Link) {
+    window.open(Link, '_blank');
+  }
