@@ -103,7 +103,7 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    padding: 2rem 5%;
+    padding: 2rem 5% 0 5%;
     background: linear-gradient(135deg, #f6f8fa 0%, #e9f0f5 100%);
 }
 
@@ -224,7 +224,7 @@ h1, h2, h3 {
 
 
 .about{
-    padding-top: 4rem;
+    padding-top: 2rem;
 }
 
 .about p{
@@ -641,6 +641,12 @@ footer {
 
     .hero-content {
         margin-bottom: 2rem;
+        margin-top: 72px;
+
+    }
+
+    .hero-title{
+        margin-right: 0;
     }
 
     .cta-container {
