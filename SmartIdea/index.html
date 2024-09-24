@@ -7,36 +7,69 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("0gEo9Nyrg1FhtKqeJ");
+      })();
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="container">
-                <div class="logo">SmartIdea</div>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#process">Processo</a></li>
-                    <li><a href="#prototype">Protótipo</a></li>
-                    <li><a href="#team">Equipe</a></li>
-                    <li><a href="#testimonials">Depoimentos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
+            <div class="logo">
+                <div class="logo-text">SmartIdea</div>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">Sobre</a></li>
+                <li><a href="#process" class="nav-item">Processo</a></li>
+                <li><a href="#prototype" class="nav-item">Protótipo</a></li>
+                <li><a href="#team" class="nav-item">Equipe</a></li>
+                <li><a href="#testimonials" class="nav-item">Depoimentos</a></li>
+                <li><a href="#contact" class="nav-item">Contato</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>SmartIdea</h1>
-                <p>Transformando ideias em soluções inovadoras</p>
-                <a href="#about" class="cta-button">Saiba Mais</a>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1 class="hero-title">Valide Suas Ideias Com <span class="highlight">SmartIdea</span></h1>
+                <p class="hero-subtitle">Transforme seus conceitos em realidade com nossa plataforma avançada de validação de ideias</p>
+                <div class="cta-container">
+                    <a href="#" class="cta-button primary">Comece Agora</a>
+                    <a href="#" class="cta-button secondary">Saiba Mais</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400" alt="Idea Validation" class="main-image">
+                <div class="floating-element bulb">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="floating-element rocket">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="floating-element chart">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="floating-element cog">
+                    <i class="fas fa-cog"></i>
+                </div>
             </div>
         </section>
 
@@ -219,9 +252,9 @@
                 <h2>Contato</h2>
                 <p>Entre em contato conosco para saber mais sobre o SmartIdea ou para iniciar seu projeto inovador:</p>
                 <form id="contact-form">
-                    <input type="text" name="name" placeholder="Seu Nome" required>
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                    <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                    <input type="text" name="name" id="name" placeholder="Seu Nome" required>
+                    <input type="email" name="email" id="email" placeholder="Seu E-mail" required>
+                    <textarea name="message" id="message" placeholder="Sua Mensagem" required></textarea>
                     <button type="submit" class="submit-button">Enviar Mensagem</button>
                 </form>
                 <div class="contact-info">
