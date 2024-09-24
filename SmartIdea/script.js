@@ -1,12 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
 
-    // Toggle menu for mobile devices
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
+    // Parallax effect
+    const parallax = () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax');
+
+        parallaxElements.forEach(element => {
+            const speed = element.dataset.speed;
+            element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    };
+
+    window.addEventListener('scroll', parallax);
+
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    // Navigation toggle
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        burger.classList.toggle('toggle');
     });
+
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -140,5 +164,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };*/
 
 });
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    emailjs.send('service_mmh4vff', 'template_ntjv2is', templateParams)
+        .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        }, function(error) {
+        console.log('FAILED...', error);
+        });
+    });
 
 
