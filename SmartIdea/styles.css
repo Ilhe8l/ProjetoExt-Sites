@@ -13,10 +13,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -91,6 +91,7 @@ nav {
 }
 section {
     padding: 2rem 0;
+    scroll-margin-top: 12vh;
 }
 
 h1, h2, h3 {
@@ -209,8 +210,8 @@ strong{
 }
 
 .rocket {
-    top: 20%;
-    right: 5rem;
+    top: 0%;
+    right: 20%;
     animation: float 4s ease-in-out infinite;
 }
 
@@ -603,6 +604,7 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
         width: 50%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
@@ -610,6 +612,11 @@ footer {
 
     .nav-links li {
         opacity: 0;
+    }
+
+    .nav-links a{
+        font-size: 1.5rem;
+        margin: 0;
     }
 
     .burger {
@@ -804,7 +811,7 @@ footer {
 .timeline {
     position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px 0;
 }
 
