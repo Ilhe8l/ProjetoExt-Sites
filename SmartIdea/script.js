@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // Parallax effect
     const parallax = () => {
         const scrolled = window.pageYOffset;
@@ -16,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
+    
     // Navigation toggle
     burger.addEventListener('click', () => {
         nav.classList.toggle('nav-active');
@@ -31,13 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.classList.toggle('toggle');
     });
 
-
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            navLinks.classList.remove('active');
-            menuToggle.classList.remove('active');
+            nav.classList.remove('nav-active');
+            burger.classList.remove('toggle');
 
             document.querySelector(this.getAttribute('href')).scrollIntoView({
                 behavior: 'smooth'
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newsletterForm.reset();
     });
 
-    /*Cards */
+    // Cards slider functionality
     const sliderC = document.querySelector('.gallery');
     let isDown = false;
     let startX;
@@ -122,11 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
         startX = e.pageX - sliderC.offsetLeft;
         scrollLeft = sliderC.scrollLeft;
     });
-    sliderC.addEventListener('mouseleave', _ => {
+    sliderC.addEventListener('mouseleave', () => {
         isDown = false;
         sliderC.classList.remove('active');
     });
-    sliderC.addEventListener('mouseup', _ => {
+    sliderC.addEventListener('mouseup', () => {
         isDown = false;
         sliderC.classList.remove('active');
     });
@@ -139,47 +138,21 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderC.scrollLeft = scrollLeft - walk;
     });
 
-    /*Scroll Automático */
-    /*const gallery = document.querySelector('.gallery');
-    let scrollAmount = 0;
+    // EmailJS form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var templateParams = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
 
-    function autoScroll() {
-        scrollAmount += 3; // Velocidade de scroll
-        if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
-            scrollAmount = 0; // Volta ao início
-        }
-        gallery.scrollTo({
-            left: scrollAmount,
-            behavior: 'smooth'
-        });
-    }
-
-    gallery.addEventListener('click', () => {
-        clearInterval(autoScrollInterval); // Para o scroll ao clicar na galeria
+        emailjs.send('service_mmh4vff', 'template_ntjv2is', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
     });
-
-    // Inicia o autoScroll quando a página carregar
-    window.onload = () => {
-        autoScrollInterval = setInterval(autoScroll, 30);
-    };*/
-
 });
-
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    var templateParams = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-    };
-
-    emailjs.send('service_mmh4vff', 'template_ntjv2is', templateParams)
-        .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        }, function(error) {
-        console.log('FAILED...', error);
-        });
-    });
-
-
