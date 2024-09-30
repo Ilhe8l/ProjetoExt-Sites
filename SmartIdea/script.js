@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Parallax effect
+    // Efeito de parallax
     const parallax = () => {
         const scrolled = window.pageYOffset;
         const parallaxElements = document.querySelectorAll('.parallax');
@@ -12,14 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', parallax);
 
+    // Funcionalidade do menu hamburguer
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
     
-    // Navigation toggle
     burger.addEventListener('click', () => {
+        // Toggle da navegação
         nav.classList.toggle('nav-active');
 
+        // Animação dos links
         navLinks.forEach((link, index) => {
             if (link.style.animation) {
                 link.style.animation = '';
@@ -28,10 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Animação do burger
         burger.classList.toggle('toggle');
     });
 
-    // Smooth scrolling for navigation links
+    // Rolagem suave para links de navegação
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer for section animations
+    // Observer de interseção para animações de seção
     const sections = document.querySelectorAll('.about, .process, .prototype, .team, .testimonials, .contact');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -58,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Carousel functionality
+    // Funcionalidade do carrossel
     const carousel = document.querySelector('.carousel-container');
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.nav-dot');
@@ -78,13 +81,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Auto-advance carousel
+    // Avanço automático do carrossel
     setInterval(() => {
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     }, 5000);
 
-    // Form submission handling
+    // Carrossel de imagens do projeto
+    const imageSlides = document.querySelectorAll('.image-slide');
+    const imageDots = document.querySelectorAll('.project-images .nav-dot');
+    let currentImageSlide = 0;
+
+    function showImageSlide(n) {
+        imageSlides[currentImageSlide].classList.remove('active');
+        imageDots[currentImageSlide].classList.remove('active');
+        currentImageSlide = (n + imageSlides.length) % imageSlides.length;
+        imageSlides[currentImageSlide].classList.add('active');
+        imageDots[currentImageSlide].classList.add('active');
+    }
+
+    imageDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => showImageSlide(index));
+    });
+
+    // Mostrar a primeira imagem ao carregar
+    showImageSlide(0);
+
+    setInterval(() => showImageSlide(currentImageSlide + 1), 5000);
+
+    // Slider de vídeos do projeto
+    const videoSlides = document.querySelectorAll('.video-slide');
+    const prevButton = document.querySelector('.prev-slide');
+    const nextButton = document.querySelector('.next-slide');
+    let currentVideoSlide = 0;
+
+    function showVideoSlide(n) {
+        videoSlides[currentVideoSlide].classList.remove('active');
+        currentVideoSlide = (n + videoSlides.length) % videoSlides.length;
+        videoSlides[currentVideoSlide].classList.add('active');
+    }
+
+    prevButton.addEventListener('click', () => showVideoSlide(currentVideoSlide - 1));
+    nextButton.addEventListener('click', () => showVideoSlide(currentVideoSlide + 1));
+
+    // Mostrar o primeiro vídeo ao carregar
+    showVideoSlide(0);
+
+    // Manipulação de envio de formulário
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -109,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newsletterForm.reset();
     });
 
-    // Cards slider functionality
+    // Funcionalidade do slider de cards
     const sliderC = document.querySelector('.gallery');
     let isDown = false;
     let startX;
@@ -138,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderC.scrollLeft = scrollLeft - walk;
     });
 
-    // EmailJS form submission
+    // Envio de formulário com EmailJS
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
         
@@ -150,9 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         emailjs.send('service_mmh4vff', 'template_ntjv2is', templateParams)
             .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
+                console.log('SUCESSO!', response.status, response.text);
             }, function(error) {
-                console.log('FAILED...', error);
+                console.log('FALHOU...', error);
             });
     });
 });

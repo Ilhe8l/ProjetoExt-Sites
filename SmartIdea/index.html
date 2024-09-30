@@ -7,24 +7,21 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-      (function () {
-        emailjs.init("0gEo9Nyrg1FhtKqeJ");
-      })();
+        (function() {
+            emailjs.init("0gEo9Nyrg1FhtKqeJ");
+        })();
     </script>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <nav>
             <div class="logo">
                 <div class="logo-text">SmartIdea</div>
             </div>
-            <div class="menu-toggle">
+             <div class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -35,8 +32,10 @@
                 <li><a href="#about" class="nav-item">Sobre</a></li>
                 <li><a href="#process" class="nav-item">Processo</a></li>
                 <li><a href="#prototype" class="nav-item">Protótipo</a></li>
-                <li><a href="#team" class="nav-item">Equipe</a></li>
+                <li><a href="#project-images" class="nav-item">Imagens</a></li>
+                <li><a href="#project-videos" class="nav-item">Vídeos</a></li>
                 <li><a href="#testimonials" class="nav-item">Depoimentos</a></li>
+                <li><a href="#team" class="nav-item">Equipe</a></li>
                 <li><a href="#contact" class="nav-item">Contato</a></li>
             </ul>
             <div class="burger">
@@ -48,6 +47,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1 class="hero-title">Valide Suas Ideias Com <span class="highlight">SmartIdea</span></h1>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://via.placeholder.com/600x400" alt="Idea Validation" class="main-image">
+                <img src="https://via.placeholder.com/800x400" alt="Idea Validation" class="main-image">
                 <div class="floating-element bulb">
                     <i class="fas fa-lightbulb"></i>
                 </div>
@@ -74,23 +74,26 @@
             </div>
         </section>
 
-        
+        <!-- Mission Section -->
         <section class="mission" id="mission">
             <div class="container">
                 <h2>Nossa Missão</h2>
-                <p>O <strong>SmartIdea</strong> nasceu da pergunta: "como podemos desenvolver soluções inovadoras rapidamente e com eficácia?" Queremos ajudar a resolver problemas, dos mais simples aos mais complexos, com abordagens criativas e novas soluções.</p>
-                <p>Validar uma ideia é mais do que apresentá-la, é mostrar por que ela pode fazer a diferença. O SmartIdea transforma boas ideias em realidade, criando lideranças e times de alta performance por meio de um processo dinâmico e envolvente.</p>
-                <p>Originado no <strong>Laboratório de Extensão e Desenvolvimento de Soluções</strong>, promovemos aprendizado colaborativo em um ambiente inovador. Unimos ensino, pesquisa e extensão para resolver problemas reais com impacto positivo.</p>
+                <p>O SmartIdea surgiu com a missão de responder à pergunta: <strong>"Como podemos desenvolver soluções inovadoras rapidamente e com eficácia?"</strong> Nosso objetivo é ajudar a resolver problemas, sejam eles simples ou complexos, através de abordagens criativas e novas soluções. Validar uma ideia significa mais do que simplesmente apresentá-la; trata-se de demonstrar seu potencial impacto. No SmartIdea, transformamos boas ideias em realidade, formando líderes e equipes de alta performance através de um processo dinâmico e envolvente. Originado no <strong>Laboratório de Extensão e Desenvolvimento de Soluções</strong>, unimos ensino, pesquisa e extensão para resolver problemas reais com impacto positivo.</p>
             </div>
         </section>
         
+        <!-- About Section -->
         <section id="about" class="about">
             <div class="container">
                 <h2>O SmartIdea</h2>
-                <p>Por que empresas como a <strong>Apple</strong> são tão inovadoras? Por que líderes como <strong>Mandela</strong> e <strong>Martin Luther King Jr.</strong> tiveram ideias tão impactantes? Eles criaram soluções que ajudaram muitas pessoas. Todos nós podemos pensar em soluções. Se tivesse uma pedra no sapato, como a removeria? Pense nas três perguntas do <strong>Ciclo de Ouro de Simon Sinek</strong>: <em>o que fazemos? Como fazemos? E por que fazemos?</em></p>
-                <p>Explicar o <strong>porquê</strong> fazemos algo é essencial, pois é a base da nossa motivação. Quando o "porquê" é claro, o "o quê" e o "como" se tornam mais compreensíveis. Nosso foco e sucesso dependem da clareza de nossos objetivos.</p>
-                <p>Hoje, muitas ideias não são validadas e morrem antes de serem implementadas. Quantas soluções não foram aplicadas? Quantos problemas poderiam ter sido resolvidos?</p>
-                
+                <p>O SmartIdea é uma plataforma inovadora dedicada à validação de ideias. Muitas vezes, ideias promissoras não são implementadas devido à falta de validação adequada. Nossa plataforma visa mudar essa realidade, inspirando-nos em líderes e empresas que fizeram grandes diferenças, como a <strong>Apple</strong> e figuras como <strong>Mandela</strong> e <Strong>Martin Luther King Jr</Strong>. Acreditamos que todos têm a capacidade de criar soluções impactantes.</p>
+                <p>No coração do SmartIdea está o <strong>Ciclo de Ouro de Simon Sinek</strong>:</p>
+                <ul>
+                    <li><strong>O que fazemos?</strong> Desenvolvemos um aplicativo para validação de ideias.</li>
+                    <li><strong>Como fazemos?</strong> Utilizamos um processo dinâmico e colaborativo que envolve criação de protótipos, testes com usuários reais e análise contínua de feedback.</li>
+                    <li><strong>Por que fazemos?</strong> Porque acreditamos que ideias inovadoras, quando validadas corretamente, podem causar um impacto positivo significativo no mundo.</li>
+                </ul>
+                <p>Nosso propósito é claro: transformar ideias em realidade. Proporcionamos uma estrutura eficiente para que as pessoas validem e implementem suas soluções, com foco em um objetivo claro que impulsiona nosso sucesso e dedicação. Queremos evitar que boas ideias morram antes de serem testadas, garantindo que soluções potencialmente transformadoras sejam levadas adiante e façam a diferença que todos desejamos ver no mundo.</p>
                 <h3>Nosso foco principal inclui:</h3>
                 <div class="about-features">
                     <div class="feature">
@@ -111,9 +114,33 @@
                 </div>
             </div>
         </section>
-        
-        
 
+        <!-- Methodology Section -->
+        <section id="methodology" class="methodology section">
+            <div class="container">
+                <h2>Metodologia</h2>
+                <div class="methodology-content">
+                    <div class="methodology-item">
+                        <h3>Framework Ágil</h3>
+                        <p>A equipe adotou um framework ágil para garantir flexibilidade e capacidade de resposta às mudanças nos requisitos ao longo do ciclo de vida do projeto.</p>
+                        <ul>
+                            <li><strong>Práticas Scrum:</strong> Implementação de reuniões diárias, revisões de sprint e retrospectivas para manter a transparência e a responsabilidade.</li>
+                            <li><strong>Princípios Kanban:</strong> Utilização de Kanban para visualizar tarefas e gerenciar o trabalho em andamento, identificando gargalos e otimizando o fluxo de trabalho.</li>
+                        </ul>
+                    </div>
+                    <div class="methodology-item">
+                        <h3>Atividade Crazy Eights</h3>
+                        <p>A técnica de brainstorming "Crazy Eights" foi usada para gerar ideias de design inovadoras. Esse método envolve esboçar rapidamente oito ideias diferentes, promovendo a criatividade e a geração de conceitos iniciais.</p>
+                        <ul>
+                            <li><strong>Facilitando a Colaboração:</strong> Incentivou a colaboração e a diversidade de perspectivas.</li>
+                            <li><strong>Refinamento das Ideias:</strong> Permitiu a avaliação e a consolidação de conceitos promissores.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
         <section id="process" class="process">
             <div class="container">
                 <h2>O Processo de Desenvolvimento</h2>
@@ -189,6 +216,7 @@
             </div>
         </section>
 
+        <!-- Prototype Section -->
         <section id="prototype" class="prototype">
             <div class="container">
                 <h2>Visão Geral da Plataforma</h2>
@@ -225,69 +253,74 @@
             </div>
         </section>
 
-        <section id="team" class="team">
+        <!-- Project Images Section -->
+        <section id="project-images" class="project-images">
             <div class="container">
-                <h2>Nossa Equipe</h2>
-                <p>Conheça os profissionais dedicados que tornam o SmartIdea possível.</p>
-                <!--<div class="team-members">
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 1">
-                        <h3>Ana Silva</h3>
-                        <p>Fundadora e CEO</p>
+                <h2>Imagens do Projeto</h2>
+                <div class="image-carousel">
+                    <div class="image-slide">
+                        <img src="https://via.placeholder.com/800x400" alt="Imagem do Projeto 1">
                     </div>
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 2">
-                        <h3>Carlos Santos</h3>
-                        <p>Diretor de Inovação</p>
+                    <div class="image-slide">
+                        <img src="https://via.placeholder.com/800x400" alt="Imagem do Projeto 2">
                     </div>
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 3">
-                        <h3>Mariana Costa</h3>
-                        <p>Gerente de Projetos</p>
+                    <div class="image-slide">
+                        <img src="https://via.placeholder.com/800x400" alt="Imagem do Projeto 3">
                     </div>
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 4">
-                        <h3>Rafael Oliveira</h3>
-                        <p>Desenvolvedor Chefe</p>
-                    </div>
-                </div>-->
-
-                <ul class="gallery">
-                    <li class="gallery-item">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 1">
-                        <h3>Ana Silva</h3>
-                        <p>Fundadora e CEO</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 2">
-                        <h3>Nome</h3>
-                        <p>Função</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 3">
-                        <h3>Nome</h3>
-                        <p>Função</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 4">
-                        <h3>Nome</h3>
-                        <p>Função</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 5">
-                        <h3>Nome</h3>
-                        <p>Função</p>
-                    </li>
-                    <li class="gallery-item">
-                        <img src="https://via.placeholder.com/150" alt="Membro da Equipe 6">
-                        <h3>Nome</h3>
-                        <p>Função</p>
-                    </li>
-                </ul>     
-            </div>
+                </div>
+                <div class="carousel-nav">
+                    <span class="nav-dot active"></span>
+                    <span class="nav-dot"></span>
+                    <span class="nav-dot"></span>
+                </div>
             </div>
         </section>
 
+        <!-- Project Videos Section -->
+        <section id="project-videos" class="project-videos">
+            <div class="container">
+                <h2>Vídeos do Projeto</h2>
+                <div class="video-slider">
+                    <div class="video-slide">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/taTmpYQ_3jk?si=375qb8b3KjCXVOVQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="video-slide">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/mZruIWXB59s?si=QRyb5wCp4pd3zUJ2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                    <div class="video-slide">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/kYfNvmF0Bqw?si=pOEENWGXA8Hg4lb9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                    </div>
+                </div>
+                <div class="slider-nav">
+                    <button class="prev-slide">Anterior</button>
+                    <button class="next-slide">Próximo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section id="impact" class="impact section">
+            <div class="container">
+                <h2>Impacto e Conclusão</h2>
+                <div class="impact-content">
+                    <div class="impact-item">
+                        <h3>Aprendizagem e Colaboração</h3>
+                        <p>Fomentamos um ambiente colaborativo e criativo, validando regularmente nossas propostas com os stakeholders para garantir relevância e eficácia.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h3>Impacto</h3>
+                        <p>Nosso objetivo é gerar soluções que causem impacto positivo na sociedade, transformando boas ideias em realidade e promovendo a liderança e o desempenho de alto nível.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h3>Conclusão</h3>
+                        <p>O SmartIdea visa criar um ambiente colaborativo que aprimora as habilidades de resolução de problemas e entrega soluções funcionais e amigáveis. Utilizando metodologias ágeis e ferramentas eficazes de gerenciamento de projetos, estamos bem posicionados para entregar soluções de alta qualidade que atendam às necessidades operacionais de diversas unidades e organizações.</p>
+                    </div>
+                    <div class="impact-item">
+                        <h3>Futuras Implicações</h3>
+                        <p>As lições aprendidas deste projeto podem informar as melhores práticas para iniciativas similares, enfatizando a importância do envolvimento dos usuários, design iterativo e colaboração eficaz. Estamos comprometidos com a excelência e a melhoria contínua, priorizando as necessidades dos usuários e fomentando um ambiente inovador e eficiente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials">
             <div class="container">
                 <h2>Depoimentos</h2>
@@ -308,6 +341,57 @@
             </div>
         </section>
 
+        <!-- Team Section -->
+        <section id="team" class="team">
+            <div class="container">
+                <h2>Nossa Equipe</h2>
+                <p>Conheça os profissionais dedicados que tornam o SmartIdea possível.</p>
+                <ul class="gallery">
+                    <li class="gallery-item">
+                        <img src="imagens/MoisesOmena.png" alt="Membro da Equipe 1">
+                        <h3>Moisés Omena</h3>
+                        <p>Orientador</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/FelipeFrechiani.png" alt="Membro da Equipe 2">
+                        <h3>Felipe Frechiani</h3>
+                        <p>Orientador</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/SamuelFerreira.png" alt="Membro da Equipe 3">
+                        <h3>Samuel Ferreira</h3>
+                        <p>Estudante</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/Gabriel.png" alt="Membro da Equipe 4">
+                        <h3>Gabriel Naoseioque</h3>
+                        <p>Estudante</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/StephanyLahhas.png" alt="Membro da Equipe 5">
+                        <h3>Stéphany Lahhas</h3>
+                        <p>Estudante</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/LuizaCoutinho.png" alt="Membro da Equipe 6">
+                        <h3>Luiza Coutinho</h3>
+                        <p>Estudante</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/LuanOtoni.png" alt="Membro da Equipe 6">
+                        <h3>Luan de Oliveira</h3>
+                        <p>Estudante</p>
+                    </li>
+                    <li class="gallery-item">
+                        <img src="imagens/GuilhermeSouza.png" alt="Membro da Equipe 6">
+                        <h3>Guilherme Souza</h3>
+                        <p>Estudante</p>
+                    </li>
+                </ul>     
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Contato</h2>
@@ -327,6 +411,7 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <div class="container">
             <div class="footer-content">
