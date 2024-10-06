@@ -136,6 +136,7 @@ strong{
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease;
     margin-right: 3rem;
+    margin-top: 2rem;
 }
 
 .highlight {
@@ -189,7 +190,6 @@ strong{
 }
 
 .hero-image {
-    flex: 1;
     position: relative;
     animation: fadeIn 1s ease 0.6s;
     animation-fill-mode: both;
@@ -423,7 +423,6 @@ strong{
 
 /* Estilo seção Imagens do Projeto */
 .project-images {
-    background-color: var(--light-gray);
     text-align: center;
 }
 
@@ -432,26 +431,15 @@ strong{
     margin-bottom: 2rem;
 }
 
-.image-carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
+.project-images .carousel-slide{
+    display: flex;
+    flex-direction: column;
 }
 
-.image-slide {
-    display: none;
-}
-
-.image-slide.active {
-    display: block;
-}
-
-.image-slide img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.project-images img{
+    margin-top: 1.5rem;
+    width: 100%;
+    height: 100%;
 }
 
 /* Estilo seção Videos do Projeto*/
@@ -532,8 +520,6 @@ strong{
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-    
-}
 
 .impact-item h3 {
     font-size: 1.8rem;
@@ -787,7 +773,7 @@ footer {
     }
 
     .nav-links a{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin: 0;
     }
 
@@ -815,12 +801,19 @@ footer {
     }
 
     .hero-content{
-        margin-top: 120px;
+        margin-top: 4rem;
     }
     .hero-content,
     .hero-image {
         max-width: 100%;
     }
+
+    .hero-content h1{
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0;
+    }
+
     .hero-image{
         margin-top: 20px;
     }
