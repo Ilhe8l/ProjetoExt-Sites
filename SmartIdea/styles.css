@@ -35,6 +35,11 @@ p, li{
     font-size: 1.2rem;
 }
 
+p {
+    text-indent: 3rem; 
+}
+
+
 /* Estilos do cabeçalho */
 header {
     background-color: var(--white);
@@ -319,6 +324,7 @@ strong{
 .methodology-item li {
     margin-bottom: 10px;
     padding-left: 25px;
+    margin-left: 15px;
     position: relative;
 }
 
@@ -376,16 +382,18 @@ strong{
     flex: 0 0 100%;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding:  2rem 1rem;
 }
 
 .carousel-slide img {
     width: 270px;
     height: 480px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
+    background-color: #262626;
+
 }
 
 .carousel-slide img:hover{
@@ -440,6 +448,8 @@ strong{
     margin-top: 1.5rem;
     width: 100%;
     height: 100%;
+    max-height: 350px;
+    background-color: var(--white);
 }
 
 /* Estilo seção Videos do Projeto*/
